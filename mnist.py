@@ -320,8 +320,6 @@ def fgsm_test(net, eps, show_image = False):
 	print('Epsilon: %.1f' % eps)
 	print('Accuracy of the ' + net.path + ' network on an FGSM attack: %.2f %%' % (100 * correct / total))
 	print('Time: %.2f seconds' % (final_time - initial_time))
-	if show_image:
-		imshow(perturbed_images[0,0])
 	return(100 * correct / total)
 
 def pgd_test(net, eps, niter = 10, show_image = False):
@@ -353,7 +351,5 @@ def pgd_test(net, eps, niter = 10, show_image = False):
 	print('Epsilon: %.1f' % eps)
 	print('Accuracy of the ' + net.path + ' network on a PGD attack: %.2f %%' % (100 * correct / total))
 	print('Time: %.2f seconds' % (final_time - initial_time))
-	if show_image:
-		imshow(images[0,0])
 	return(100 * correct / total)
 
